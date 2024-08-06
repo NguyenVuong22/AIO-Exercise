@@ -1,0 +1,16 @@
+import numpy as np
+
+
+def compute_correlation_cofficient(X, Y):
+    N = len(X)
+
+    numerator = N * (np.dot(X, Y)) - np.sum(X)*np.sum(Y)
+    denominator = (np.sqrt(N * (np.dot(X, X))-(np.sum(X))**2)) * \
+        (np.sqrt(N * (np.dot(Y, Y))-(np.sum(Y))**2))
+
+    return np.round(numerator/denominator, 2)
+
+
+X = np. asarray([-2, -5, -11, 6, 4, 15, 9])
+Y = np. asarray([4, 25, 121, 36, 16, 225, 81])
+print(" Correlation : ", compute_correlation_cofficient(X, Y))
